@@ -2,7 +2,7 @@
 https://usc112520-coder.github.io/interact-web/
 此資料夾可直接部署到 GitHub Pages，不需要 npm 安裝或編譯。
 
-https://usc112520-coder.github.io/interact-web/?v=student8#/presenter/new
+[https://usc112520-coder.github.io/interact-web/?v=student8#/presenter/new](https://usc112520-coder.github.io/interact-web/?v=closing12#/presenter/new)
 講師端入口
 
 https://usc112520-coder.github.io/interact-web/?v=student8#/
