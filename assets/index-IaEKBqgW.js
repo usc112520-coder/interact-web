@@ -7085,7 +7085,6 @@ function tx({joinUrl,shortJoinUrl,sessionId,sessionCode,onToggleControls,control
   const [copied,setCopied]=x.useState('');
   const [floating,setFloating]=x.useState(!!window.__interactFloatingWindow);
   const [shortUrl,setShortUrl]=x.useState(WebValidShortUrl(shortJoinUrl));
-  const [shortBusy,setShortBusy]=x.useState(false);
   const timer=x.useRef(null);
   x.useEffect(()=>()=>window.clearTimeout(timer.current),[]);
   x.useEffect(()=>{setShortUrl(WebValidShortUrl(shortJoinUrl));},[shortJoinUrl]);
@@ -7106,17 +7105,6 @@ function tx({joinUrl,shortJoinUrl,sessionId,sessionCode,onToggleControls,control
     window.clearTimeout(timer.current);
     timer.current=window.setTimeout(()=>setCopied(''),2500);
   }
-  async function shorten(){
-    if(shortUrl){setCopied('目前已顯示短網址，可按「複製短網址」。');return;}
-    const token=J(sessionId);if(!token){setCopied('此瀏覽器沒有本場次的講師憑證，請使用建立場次的瀏覽器產生短網址。');return;}
-    setShortBusy(true);setCopied('');
-    try{
-      const {data,error}=await q().functions.invoke('shorten-url',{body:{sessionId,presenterToken:token,url:joinUrl}});
-      if(error)throw new Error(await Cb(error));
-      const result=WebValidShortUrl(data?.shortUrl);if(!result)throw new Error(data?.message||'無法取得短網址。');
-      setShortUrl(result);setCopied('短網址已產生。QR Code 維持直接加入連結，支援相機掃碼。');
-    }catch(error){setCopied(error.message||'縮短網址失敗，請稍後重試。');}finally{setShortBusy(false);}
-  }
   const element=U.jsx, elements=U.jsxs;
   const button=(text,action,label)=>element('button',{type:'button',onClick:action,'aria-label':label||text,title:label||text,children:text});
   const controls=button(controlsOpen?'收起教學控制':'教學控制',()=>{if(!controlsOpen)setMode('compact');onToggleControls();});
@@ -7125,7 +7113,7 @@ function tx({joinUrl,shortJoinUrl,sessionId,sessionCode,onToggleControls,control
     elements('header',{className:'web-qr-heading',children:[element('strong',{children:'加入場次'}),elements('div',{className:'web-qr-actions',children:[button(mode==='compact'?'展開':'縮小',()=>setMode(mode==='compact'?'expanded':'compact')),button('隱藏',()=>setMode('hidden'))]})]}),
     elements('div',{className:'web-session-code',children:[element('span',{children:'場次代碼'}),element('strong',{children:sessionCode||'載入中…'})]}),
     mode==='expanded'&&elements(x.Fragment,{children:[element('div',{className:'qr-box',children:element(ex,{marginSize:4,value:joinUrl,size:224})}),element('p',{className:'web-qr-hint',children:'學生掃描 QR Code，或在學員端輸入代碼'}),shortUrl&&element('span',{className:'web-short-label',children:'短網址'}),element('a',{className:'join-url',href:shortUrl||joinUrl,target:'_blank',rel:'noopener noreferrer',children:shortUrl||joinUrl})]}),
-    elements('div',{className:'web-qr-footer',children:[controls,button(shortUrl?'複製短網址':'複製加入連結',copyLink),element('button',{type:'button',disabled:shortBusy,onClick:shorten,children:shortBusy?'縮短中…':'縮短網址'}),button(floating?'返回主視窗':'浮動教學',openFloating)]}),
+    elements('div',{className:'web-qr-footer',children:[controls,button(shortUrl?'複製短網址':'複製加入連結',copyLink),button(floating?'返回主視窗':'浮動教學',openFloating)]}),
     copied&&element('p',{className:'web-qr-feedback',role:'status',children:copied})
   ]});
 }
