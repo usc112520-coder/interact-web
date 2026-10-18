@@ -3,6 +3,8 @@ body { background:#f4f6fb; }
 .web-navigation { display:flex; gap:18px; padding:12px 20px; background:#fff; border-bottom:1px solid #dde3ed; position:relative; z-index:100; flex-wrap:wrap; }
 .web-navigation a { color:#315bbb; font:600 14px system-ui,sans-serif; text-decoration:none; }
 .web-navigation a:hover { text-decoration:underline; }
+.department-brand { color:#3e397e; font:700 14px system-ui,sans-serif; }
+.department-credit { text-align:center; color:#67718a; font-size:14px; margin:16px 0; }
 .presenter-page .qr-floating,
 .presenter-page.controls-open .qr-floating { position:fixed; top:64px; right:16px; width:min(300px,calc(100vw - 32px)); z-index:40; max-height:calc(100dvh - 80px); overflow:auto; }
 .qr-floating .web-qr-panel { border:1px solid #dfe3ef; border-radius:18px; box-shadow:0 12px 36px #24304724; background:#fff; padding:14px; gap:12px; }
