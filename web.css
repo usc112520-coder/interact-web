@@ -61,6 +61,12 @@ body { background:#f4f6fb; }
 .web-preview-drag:active { cursor:grabbing; }
 .web-preview-drag:focus-visible { outline:2px solid #b8b2ff; outline-offset:-3px; }
 .web-short-label { color:#67718a; font-size:12px; text-align:center; }
+.web-closing-settings { border:1px solid #dddff0; border-radius:12px; padding:12px; margin:10px 0; }
+.web-closing-settings summary { cursor:pointer; font-weight:700; color:#403887; }
+.web-closing-editor { display:grid; gap:12px; padding-top:12px; }
+.web-closing-preview { border-radius:10px; padding:16px; background:#f2f0ff; white-space:pre-wrap; overflow-wrap:anywhere; }
+.web-closing-preview p { margin:6px 0 0; }
+.participant-ended-hero p { white-space:pre-wrap; }
 .presenter-page .presenter-controls-overlay { top:64px; right:332px; width:min(680px,calc(100vw - 348px)); max-height:calc(100dvh - 80px); overflow:auto; border:1px solid #dfe3ef; border-radius:14px; }
 @media(max-width:700px) {
   .presenter-page .qr-floating,.presenter-page.controls-open .qr-floating { right:8px; top:58px; width:min(280px,calc(100vw - 16px)); max-height:calc(100dvh - 70px); }
