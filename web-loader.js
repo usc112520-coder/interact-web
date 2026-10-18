@@ -18,4 +18,4 @@ window.__interactImport = function (relative) {
     return window.__interactModules[name];
   })();
 };
-if (!location.hash) location.hash = '/presenter/new';
+if (!location.hash) location.hash = '/';

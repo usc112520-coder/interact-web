@@ -36,6 +36,26 @@ body { background:#f4f6fb; }
 .web-pip .web-qr-panel .qr-box svg { width:172px; }
 .web-pip .web-qr-panel { padding:10px; }
 .web-pip .web-session-code { padding:5px; }
+[data-web-role="student"] .teacher-nav-link { display:none; }
+.form-panel form { display:grid; gap:14px; }
+.web-student-entry { gap:18px; }
+.web-scanner { position:fixed; inset:10vh max(16px,calc((100vw - 540px)/2)); z-index:5000; overflow:auto; background:#fff; padding:20px; border:1px solid #dfe3ef; border-radius:18px; box-shadow:0 0 0 100vmax #10162b99; }
+.web-scanner video { width:100%; max-height:45vh; background:#151926; border-radius:12px; }
+.web-scanner h2 { font-size:20px; }
+.web-scanner p { font-size:14px; }
+.web-danmaku-preview { position:fixed; left:16px; bottom:16px; width:min(380px,calc(100vw - 32px)); background:#20253b; color:#fff; z-index:5000; border:1px solid #717597; border-radius:14px; box-shadow:0 8px 30px #10162944; overflow:hidden; isolation:isolate; }
+.web-danmaku-preview header { display:flex; align-items:center; justify-content:space-between; padding:7px 12px; background:#2b314c; }
+.web-danmaku-preview header strong { font-size:14px; }
+.web-danmaku-preview header button { font-size:12px; padding:5px 8px; min-height:28px; }
+.web-danmaku-stage { height:145px; position:relative; overflow:hidden; }
+.web-danmaku-stage .danmaku-layer { position:absolute; inset:0; z-index:1; }
+.web-danmaku-stage .danmaku-item { font-size:22px; }
+.web-danmaku-preview .web-danmaku-status { position:static; padding:5px 10px; font-size:11px; background:#2b314c; color:#dddff5; border-radius:0; }
+.web-pip .presenter-page { overflow:visible; }
+.web-pip .web-danmaku-preview { order:-10; position:sticky; top:0; bottom:auto; left:auto; width:100%; flex-shrink:0; z-index:5000; }
+@keyframes danmaku-preview-move { from { transform:translateX(0); } to { transform:translateX(calc(-100cqw - 100%)); } }
+.web-danmaku-stage { container-type:inline-size; }
+.web-danmaku-stage .danmaku-item:not(.danmaku-measure) { animation-name:danmaku-preview-move; }
 .presenter-page .presenter-controls-overlay { top:64px; right:332px; width:min(680px,calc(100vw - 348px)); max-height:calc(100dvh - 80px); overflow:auto; border:1px solid #dfe3ef; border-radius:14px; }
 @media(max-width:700px) {
   .presenter-page .qr-floating,.presenter-page.controls-open .qr-floating { right:8px; top:58px; width:min(280px,calc(100vw - 16px)); max-height:calc(100dvh - 70px); }

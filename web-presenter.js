@@ -1,6 +1,8 @@
 (() => {
   let floating=null,placeholder=null,restoring=false;
   const originalDocument=document;
+  function updateRole(){originalDocument.body.dataset.webRole=/^#\/(?:join|participant)\//.test(location.hash)||location.hash==='#/'?'student':'teacher';}
+  updateRole();window.addEventListener('hashchange',updateRole);
   function restore(){
     if(restoring)return;
     restoring=true;
