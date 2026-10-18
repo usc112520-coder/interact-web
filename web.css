@@ -57,6 +57,10 @@ body { background:#f4f6fb; }
 @keyframes danmaku-preview-move { from { transform:translateX(0); } to { transform:translateX(calc(-100cqw - 100%)); } }
 .web-danmaku-stage { container-type:inline-size; }
 .web-danmaku-stage .danmaku-item:not(.danmaku-measure) { animation-name:danmaku-preview-move; }
+.web-preview-drag { cursor:grab; touch-action:none; user-select:none; }
+.web-preview-drag:active { cursor:grabbing; }
+.web-preview-drag:focus-visible { outline:2px solid #b8b2ff; outline-offset:-3px; }
+.web-short-label { color:#67718a; font-size:12px; text-align:center; }
 .presenter-page .presenter-controls-overlay { top:64px; right:332px; width:min(680px,calc(100vw - 348px)); max-height:calc(100dvh - 80px); overflow:auto; border:1px solid #dfe3ef; border-radius:14px; }
 @media(max-width:700px) {
   .presenter-page .qr-floating,.presenter-page.controls-open .qr-floating { right:8px; top:58px; width:min(280px,calc(100vw - 16px)); max-height:calc(100dvh - 70px); }
