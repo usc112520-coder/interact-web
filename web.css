@@ -1,0 +1,5 @@
+html,body { min-height:100%; }
+body { background:#f4f6fb; }
+.web-navigation { display:flex; gap:18px; padding:12px 20px; background:#fff; border-bottom:1px solid #dde3ed; position:relative; z-index:100; flex-wrap:wrap; }
+.web-navigation a { color:#315bbb; font:600 14px system-ui,sans-serif; text-decoration:none; }
+.web-navigation a:hover { text-decoration:underline; }
