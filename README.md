@@ -2,6 +2,13 @@
 https://usc112520-coder.github.io/interact-web/
 此資料夾可直接部署到 GitHub Pages，不需要 npm 安裝或編譯。
 
+https://usc112520-coder.github.io/interact-web/?v=student8#/presenter/new
+講師端入口
+
+https://usc112520-coder.github.io/interact-web/?v=student8#/
+學員端入口
+
+
 ## 部署
 
 1. 將本資料夾內容放在 GitHub 儲存庫根目錄，讓 index.html 位於根目錄。
