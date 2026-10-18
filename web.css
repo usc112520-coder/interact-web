@@ -36,7 +36,8 @@ body { background:#f4f6fb; }
 .web-pip .web-qr-panel .qr-box svg { width:172px; }
 .web-pip .web-qr-panel { padding:10px; }
 .web-pip .web-session-code { padding:5px; }
-[data-web-role="student"] .teacher-nav-link { display:none; }
+[data-web-role="student"] .teacher-nav-link,
+[data-web-role="student"] .teacher-help-link { display:none; }
 .form-panel form { display:grid; gap:14px; }
 .web-student-entry { gap:18px; }
 .web-scanner { position:fixed; inset:10vh max(16px,calc((100vw - 540px)/2)); z-index:5000; overflow:auto; background:#fff; padding:20px; border:1px solid #dfe3ef; border-radius:18px; box-shadow:0 0 0 100vmax #10162b99; }
