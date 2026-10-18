@@ -22,6 +22,18 @@ body { background:#f4f6fb; }
 .web-qr-dock { justify-content:flex-end; padding:8px; border-radius:12px; background:white; box-shadow:0 6px 24px #24304724; }
 .web-qr-dock button:first-child { background:#5d50dd; color:white; }
 .qr-floating .web-qr-compact { gap:8px; }
+.danmaku-layer { z-index:30; }
+.danmaku-item:not(.danmaku-measure) { animation-fill-mode:forwards; }
+.web-danmaku-status { position:fixed; left:12px; bottom:10px; z-index:35; padding:5px 10px; background:#fffE; color:#46516b; border-radius:8px; font-size:12px; pointer-events:none; }
+.web-floating-placeholder { max-width:650px; margin:15vh auto; padding:24px; background:white; border:1px solid #e0e3ef; border-radius:20px; line-height:1.8; }
+.web-pip body { margin:0; background:#f4f6fb; }
+.web-pip .presenter-page { padding:8px; display:flex; flex-direction:column; gap:10px; min-height:100dvh; }
+.web-pip .presenter-page .qr-floating,.web-pip .presenter-page.controls-open .qr-floating { position:relative; inset:auto; width:100%; max-height:none; overflow:visible; flex-shrink:0; }
+.web-pip .presenter-page .presenter-controls-overlay { position:relative; inset:auto; width:100%; max-height:none; overflow:visible; box-shadow:none; flex-shrink:0; }
+.web-pip .web-danmaku-status { position:sticky; bottom:4px; order:5; text-align:center; }
+.web-pip .web-qr-panel .qr-box svg { width:172px; }
+.web-pip .web-qr-panel { padding:10px; }
+.web-pip .web-session-code { padding:5px; }
 .presenter-page .presenter-controls-overlay { top:64px; right:332px; width:min(680px,calc(100vw - 348px)); max-height:calc(100dvh - 80px); overflow:auto; border:1px solid #dfe3ef; border-radius:14px; }
 @media(max-width:700px) {
   .presenter-page .qr-floating,.presenter-page.controls-open .qr-floating { right:8px; top:58px; width:min(280px,calc(100vw - 16px)); max-height:calc(100dvh - 70px); }
