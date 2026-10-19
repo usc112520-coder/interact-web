@@ -67,6 +67,14 @@ body { background:#f4f6fb; }
 .web-closing-preview { border-radius:10px; padding:16px; background:#f2f0ff; white-space:pre-wrap; overflow-wrap:anywhere; }
 .web-closing-preview p { margin:6px 0 0; }
 .participant-ended-hero p { white-space:pre-wrap; }
+.web-roster-backdrop { position:fixed; inset:0; z-index:6000; display:flex; justify-content:center; align-items:center; background:#12182d88; padding:16px; }
+.web-roster-dialog { background:#fff; color:#263048; border-radius:16px; width:min(960px,100%); max-height:calc(100dvh - 32px); overflow:auto; box-shadow:0 14px 50px #10162a55; }
+.web-roster-update-note { margin:0; padding:12px 16px; font-size:13px; background:#f0efff; color:#4a4384; }
+.web-roster-dialog .roster-window { width:100%; max-width:none; height:auto; min-height:200px; }
+.web-roster-dialog .roster-heading { position:sticky; top:0; background:#fff; z-index:2; }
+.web-roster-rank { font-size:12px; font-weight:700; color:#5848bb; background:#f0ecff; padding:3px 6px; border-radius:6px; margin-right:6px; white-space:nowrap; }
+.web-pip .web-roster-backdrop { padding:6px; }
+.web-pip .web-roster-dialog { max-height:calc(100dvh - 12px); }
 .presenter-page .presenter-controls-overlay { top:64px; right:332px; width:min(680px,calc(100vw - 348px)); max-height:calc(100dvh - 80px); overflow:auto; border:1px solid #dfe3ef; border-radius:14px; }
 @media(max-width:700px) {
   .presenter-page .qr-floating,.presenter-page.controls-open .qr-floating { right:8px; top:58px; width:min(280px,calc(100vw - 16px)); max-height:calc(100dvh - 70px); }
